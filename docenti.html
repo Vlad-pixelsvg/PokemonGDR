@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corpo Docenti | Accademia Pokémon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF8C00;
+            --dark-orange: #e67e00;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --text-main: #333333;
+            --accent-blue: #3498db;
+            --accent-pink: #d63384;
+            --accent-red: #c0392b;
+            --accent-green: #27ae60;
+            --accent-gold: #f1c40f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: 100px;
+        }
+
+        /* NAVBAR */
+        .navbar-container {
+            position: fixed;
+            top: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 9999;
+            padding: 0 20px;
+        }
+
+        .navbar-pill {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 2px solid var(--primary-orange);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1100px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-size: 0.9rem; letter-spacing: 1px; color: #1a1a1a; display: flex; align-items: center; gap: 8px; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { color: #444; text-decoration: none; font-weight: bold; font-size: 0.8rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-orange); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* SEZIONE PRESIDE */
+        .preside-hero {
+            background: linear-gradient(135deg, #fff 0%, #fff4e6 100%);
+            border: 2px solid var(--primary-orange);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preside-badge {
+            background: var(--primary-orange);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .preside-header h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .preside-quote {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .preside-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .bio-info p { margin-bottom: 15px; font-size: 0.95rem; }
+        .data-sheet {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            font-size: 0.85rem;
+        }
+        .data-sheet strong { color: var(--primary-orange); display: block; margin-top: 10px; }
+
+        /* GRID INSEGNANTI */
+        .teachers-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary-orange);
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .teacher-card {
+            background: var(--white);
+            border-radius: 25px;
+            border: 1px solid #eee;
+            display: flex;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .teacher-card:hover { transform: translateY(-5px); border-color: var(--primary-orange); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+        .teacher-sidebar {
+            width: 140px;
+            background: #fdfdfd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 10px;
+            border-right: 1px solid #eee;
+            text-align: center;
+        }
+
+        .teacher-avatar { font-size: 3rem; margin-bottom: 15px; }
+        .teacher-age { font-size: 0.7rem; font-weight: bold; color: #999; }
+
+        .teacher-main { padding: 25px; flex: 1; }
+        .materia-tag {
+            font-size: 0.65rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .teacher-main h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 10px; }
+        .teacher-origin { font-size: 0.8rem; color: #888; margin-bottom: 15px; display: block; }
+        .teacher-bio { font-size: 0.9rem; color: #555; margin-bottom: 15px; }
+        
+        .learning-box {
+            background: var(--bg-light);
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--primary-orange);
+        }
+
+        /* COLORI MATERIE */
+        .tag-biologia { color: var(--accent-green); }
+        .tag-psicologia { color: var(--accent-pink); }
+        .tag-lotta { color: var(--accent-red); }
+        .tag-storia { color: var(--accent-gold); }
+
+        @media (max-width: 768px) {
+            .preside-grid { grid-template-columns: 1fr; }
+            .teacher-card { flex-direction: column; }
+            .teacher-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #eee; }
+            .teachers-grid { grid-template-columns: 1fr; }
+        }
+		.cta-studenti {
+    background-color: var(--primary-orange); /* Colore arancione */
+    color: white !important;                /* Testo bianco */
+    border: none !important;                /* Rimuove il bordo grigio brutto */
+    padding: 10px 20px;                     /* Spaziatura interna */
+    border-radius: 50px;                    /* Lo rende arrotondato (a pillola) */
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;                  /* Se lo usi come tag <a> */
+    display: inline-block;
+}
+
+.cta-studenti:hover {
+    background-color: var(--dark-orange);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+    </style>
+</head>
+<body>
+
+    <header class="navbar-container">
+        <nav class="navbar-pill">
+            <div class="logo">
+                <span class="pokeball-icon">🔴</span> <strong>POKÉ ACADEMY</strong>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="docenti.html" class="active">DOCENTI</a></li>
+                <li><a href="giornale.html">GIORNALINO</a></li>
+                <li><a href="club.html">CLUB</a></li>
+            </ul>
+            <button class="cta-studenti" onclick="location.href='#'">AREA STUDENTI</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section class="preside-hero">
+            <span class="preside-badge">DIREZIONE ACCADEMIA</span>
+            <div class="preside-header">
+                <h1>Blue Oak (Gary Oak)</h1>
+            </div>
+            
+            <div class="preside-grid">
+                <div class="bio-info">
+                    <p>Nipote del celebre Professor Oak, Blue ha sempre dato il massimo. Competitivo, sicuro di sé e con un forte spirito di miglioramento, ha trasposto queste caratteristiche nei 3 principi cardine che ogni studente deve possedere.</p>
+                    <p>Oltre al suo ruolo istituzionale, continua la sua attività come stimato Ricercatore Pokémon e mantiene una costante competizione con l'Accademia Arancia di Paldea.</p>
+                    <div class="preside-quote">
+                        "L'Accademia è un mio progetto per far nascere i migliori esperti di pokemon. Uno strumento per realizzare i propri sogni."
+                    </div>
+                </div>
+                
+                <div class="data-sheet">
+                    <strong>Età:</strong> 79 anni (22/05)
+                    <strong>Origine:</strong> Biancavilla (Kanto)
+                    <strong>Carriera:</strong> 
+                    Ex Capopalestra di Smeraldopoli. Superquattro di Kanto (breve periodo).
+                </div>
+            </div>
+        </section>
+
+        <h2 class="teachers-title">Corpo Docenti</h2>
+
+        <div class="teachers-grid">
+            
+            <article class="teacher-card">
+                <div class="teacher-sidebar">
+                    <div class="teacher-avatar">🧬</div>
+                    <div class="teacher-age">22 ANNI<br>(14/04)</div>
+                </div>
+                <div class="teacher-main">
+                    <span class="materia-tag tag-biologia">Biologia Pokémon</span>
+                    <h3>Luke Zein</h3>
+                    <span class="teacher-origin">📍 Isola Mele Mele, Alola</span>
+                    <p class="teacher-bio">Giovane ricercatore promettente. È stato uno degli studenti prediletti di Blue Oak prima della fondazione dell'Accademia.</p>
+                    <div class="learning-box">
+                        <strong>Cosa imparerai:</strong> Cattura, allevamento mirato ed evoluzione dei Pokémon.
+                    </div>
+                </div>
+            </article>
+
+            <article class="teacher-card">
+                <div class="teacher-sidebar">
+                    <div class="teacher-avatar">🧠</div>
+                    <div class="teacher-age">30 ANNI<br>(10/10)</div>
+                </div>
+                <div class="teacher-main">
+                    <span class="materia-tag tag-psicologia">Psicologia</span>
+                    <h3>Eloise Bordeaux</h3>
+                    <span class="teacher-origin">📍 Luminopoli, Kalos</span>
+                    <p class="teacher-bio">Psicologa rinomata a livello internazionale. Ha affinato i suoi studi nelle prestigiose scuole di Kalos.</p>
+                    <div class="learning-box">
+                        <strong>Cosa imparerai:</strong> Comprendere il linguaggio emotivo dei Pokémon, aumentare felicità e fedeltà.
+                    </div>
+                </div>
+            </article>
+
+            <article class="teacher-card">
+                <div class="teacher-sidebar">
+                    <div class="teacher-avatar">⚔️</div>
+                    <div class="teacher-age">46 ANNI<br>(01/03)</div>
+                </div>
+                <div class="teacher-main">
+                    <span class="materia-tag tag-lotta">Arte della Lotta</span>
+                    <h3>Samantha Nohea</h3>
+                    <span class="teacher-origin">📍 Isola Mele Mele, Alola</span>
+                    <p class="teacher-bio">Ex Superquattro di Alola, carica ricoperta per 10 anni consecutivi. Proviene dalla storica Scuola Pokémon di Alola.</p>
+                    <div class="learning-box">
+                        <strong>Cosa imparerai:</strong> Lotte singole e in doppio, set di mosse efficaci e gestione strumenti.
+                    </div>
+                </div>
+            </article>
+
+            <article class="teacher-card">
+                <div class="teacher-sidebar">
+                    <div class="teacher-avatar">🎨</div>
+                    <div class="teacher-age">80 ANNI<br>(22/09)</div>
+                </div>
+                <div class="teacher-main">
+                    <span class="materia-tag tag-storia">Storia e Arte</span>
+                    <h3>Paul Smith</h3>
+                    <span class="teacher-origin">📍 Ula'ula, Alola</span>
+                    <p class="teacher-bio">Storico e critico d'arte di fama mondiale. Fonde l'influenza culturale di Kalos con le tradizioni di Alola.</p>
+                    <div class="learning-box">
+                        <strong>Cosa imparerai:</strong> Storia del mondo Pokémon, analisi di specie specifiche e genesi del Pokédex.
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+</body>
+</html>
