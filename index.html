@@ -241,6 +241,35 @@ a, button, .card, .area-studenti, .search-btn, .pokeball-center img, .news-card 
 a:hover, button:hover, .card:hover {
     cursor: url('image/Mouse.png') 0 0, pointer !important;
 }
+
+	.card {
+    background: white;
+    border-radius: 25px;
+    height: auto; /* Cambiato da 250px a auto per far spazio all'immagine */
+    min-height: 250px;
+    padding: 0; /* Togliamo il padding per far arrivare l'immagine ai bordi */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Importante per arrotondare i bordi dell'immagine */
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+    text-decoration: none;
+}
+
+.card-img {
+    width: 100%;
+    height: 150px; /* Altezza dell'immagine nella card */
+    object-fit: cover; /* L'immagine riempie lo spazio senza deformarsi */
+}
+
+.card-content {
+    padding: 20px; /* Riaggiungiamo il padding solo al testo */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
     </style>
 </head>
 <body>
@@ -279,30 +308,34 @@ a:hover, button:hover, .card:hover {
             </div>
         </div>
 
-        <div class="news-slider">
-            <!-- Articolo 1: Apertura Club -->
-            <a href="giornale.html" class="card news-card">
-                <div class="card-content">
-                    <span class="card-date">16 OTTOBRE</span>
-                    <h3>Apertura dei club per i primini</h3>
-                </div>
-            </a>
-            <!-- Articolo 2: Sabato condiviso -->
-            <a href="giornale.html" class="card news-card">
-                <div class="card-content">
-                    <span class="card-date">14 OTTOBRE</span>
-                    <h3>Sabato condiviso!</h3>
-                </div>
-            </a>
-            <!-- Articolo 3: Allerta Spettri -->
-            <a href="giornale.html" class="card news-card">
-                <div class="card-content">
-                    <span class="card-date">13 OTTOBRE</span>
-                    <h3>Venerdì 13: Allerta Spettri</h3>
-                </div>
-            </a>
+       <div class="news-slider">
+    <!-- Articolo 1: Apertura Club -->
+    <a href="giornale.html" class="card news-card">
+        <img src="image/16.png" alt="Club" class="card-img"> <!-- INSERISCI QUI LA FOTO -->
+        <div class="card-content">
+            <span class="card-date">16 OTTOBRE</span>
+            <h3>Apertura dei club per i primini</h3>
         </div>
-    </section>
+    </a>
+
+    <!-- Articolo 2: Sabato condiviso -->
+    <a href="giornale.html" class="card news-card">
+        <img src="image/14.png" alt="Sabato" class="card-img"> <!-- INSERISCI QUI LA FOTO -->
+        <div class="card-content">
+            <span class="card-date">14 OTTOBRE</span>
+            <h3>Sabato condiviso!</h3>
+        </div>
+    </a>
+
+    <!-- Articolo 3: Allerta Spettri -->
+    <a href="giornale.html" class="card news-card">
+        <img src="image/13.png" alt="Spettri" class="card-img"> <!-- INSERISCI QUI LA FOTO -->
+        <div class="card-content">
+            <span class="card-date">13 OTTOBRE</span>
+            <h3>Venerdì 13: Allerta Spettri</h3>
+        </div>
+    </a>
+</div>
 
     <script>
         document.getElementById('newsSearch').addEventListener('keyup', function(e) {
