@@ -95,16 +95,36 @@
         }
 
         /* --- HERO --- */
+      /* --- HERO CON TUA IMMAGINE --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,1)), 
-                        url('https://images8.alphacoders.com/129/1291147.png'); 
+            /* Sostituisci 'NOME-FILE.jpg' con il nome reale della tua foto */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('image/SfondoIndex.jpg'); 
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem; /* Leggermente più grande per l'effetto wow */
+            color: #ffffff; /* Testo bianco per contrasto sulla foto */
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5); /* Ombra per profondità */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
         }
 
         .hero-text h1 {
