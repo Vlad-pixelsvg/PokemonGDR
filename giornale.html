@@ -6,6 +6,22 @@
     <title>Cronaca di Paldea | Giornalino Ufficiale</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Press+Start+2P&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        /* Applica a tutto il documento */
+html, body {
+    cursor: url('image/Mouse.png') 0 0, auto !important;
+    min-height: 100vh;
+}
+
+/* Applica specificamente a link, pulsanti e card */
+a, button, .card, .area-studenti, .search-btn, .pokeball-center img, .news-card {
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+}
+
+/* Fix per Chrome: a volte serve forzare lo stato active/hover */
+a:hover, button:hover, .card:hover {
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+}
+
         :root {
             --primary-orange: #FF8C00;
             --dark-orange: #E67E00;
