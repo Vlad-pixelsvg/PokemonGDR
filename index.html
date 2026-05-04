@@ -201,15 +201,24 @@
             .nav-links, .area-studenti { display: none; }
             .hero-text h1 { font-size: 1.8rem; }
         }
-		body {
-    /* Sostituisci l'URL con il percorso della tua immagine */
-    cursor: url('image/Mouse.png'), auto;
-}
+		@media (max-width: 768px) {
+            .navbar-pill { padding: 10px 20px; }
+            .nav-links, .area-studenti { display: none; }
+            .hero-text h1 { font-size: 1.8rem; }
+        }
 
-/* Se vuoi che cambi quando passi sopra un link o un pulsante */
-a:hover, button:hover, .card:hover {
-    cursor: url('percorso_altra_icona.png'), pointer;
-}
+        /* --- FIX CURSORE PERSONALIZZATO --- */
+        html, body {
+            /* Assicurati che il percorso sia ESATTAMENTE come quello nella cartella */
+            /* Se la cartella si chiama 'image' e il file 'Mouse.png', usa questo: */
+            cursor: url('image/Mouse.png'), auto;
+        }
+
+        /* Cambia cursore sopra elementi cliccabili */
+        a, button, .card, .area-studenti, .search-btn {
+            /* Puoi usare la stessa immagine o una diversa per il puntatore */
+            cursor: url('image/Mouse.png'), pointer !important;
+        }
     </style>
 </head>
 <body>
