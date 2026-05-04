@@ -206,19 +206,21 @@
             .nav-links, .area-studenti { display: none; }
             .hero-text h1 { font-size: 1.8rem; }
         }
+/* Applica a tutto il documento */
+html, body {
+    cursor: url('image/Mouse.png') 0 0, auto !important;
+    min-height: 100vh;
+}
 
-        /* --- FIX CURSORE PERSONALIZZATO --- */
-        html, body {
-            /* Assicurati che il percorso sia ESATTAMENTE come quello nella cartella */
-            /* Se la cartella si chiama 'image' e il file 'Mouse.png', usa questo: */
-            cursor: url('image/Mouse.png'), auto;
-        }
+/* Applica specificamente a link, pulsanti e card */
+a, button, .card, .area-studenti, .search-btn, .pokeball-center img, .news-card {
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+}
 
-        /* Cambia cursore sopra elementi cliccabili */
-        a, button, .card, .area-studenti, .search-btn {
-            /* Puoi usare la stessa immagine o una diversa per il puntatore */
-            cursor: url('image/Mouse.png'), pointer !important;
-        }
+/* Fix per Chrome: a volte serve forzare lo stato active/hover */
+a:hover, button:hover, .card:hover {
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+}
     </style>
 </head>
 <body>
