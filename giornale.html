@@ -18,7 +18,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            font-family: 'Lora', serif; /* Font più giornalistico per i testi */
+            font-family: 'Lora', serif;
             background-color: var(--bg-white); 
             color: var(--text-dark); 
             line-height: 1.8; 
@@ -80,16 +80,25 @@
             margin-bottom: 25px;
         }
 
+        /* FIX ICONA: Da emoji a immagine rotonda */
         .news-icon {
-            width: 80px; height: 80px;
+            width: 80px; 
+            height: 80px;
             min-width: 80px;
-            border-radius: 50%;
+            border-radius: 50%; /* Rende il cerchio */
             background: var(--primary-orange);
             border: 4px solid var(--dark-orange);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2.2rem;
-            color: white;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            overflow: hidden; /* Taglia i bordi delle immagini quadrate */
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .news-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Riempie il cerchio senza deformarsi */
         }
 
         .date-box {
@@ -194,9 +203,12 @@
             </div>
         </div>
 
+        <!-- ARTICOLO 1 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">🏘️</div>
+                <div class="news-icon">
+                    <img src="image/16.png" alt="Club"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">16 OTTOBRE</span>
                     <h2 class="article-title">Apertura dei club per i primini</h2>
@@ -216,9 +228,12 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 2 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">📸</div>
+                <div class="news-icon">
+                    <img src="img/sabato-icon.jpg" alt="Sabato"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">14 OTTOBRE</span>
                     <h2 class="article-title">Sabato condiviso!</h2>
@@ -235,9 +250,12 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 3 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">📡</div>
+                <div class="news-icon">
+                    <img src="img/spettri-icon.jpg" alt="Spettri"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">13 OTTOBRE</span>
                     <h2 class="article-title">Venerdì 13: Allerta Spettri</h2>
@@ -253,9 +271,12 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 4 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">🎒</div>
+                <div class="news-icon">
+                    <img src="img/esame-icon.jpg" alt="Esame"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">12 OTTOBRE</span>
                     <h2 class="article-title">Esame di cattura per il primo anno</h2>
@@ -264,16 +285,16 @@
             <div class="article-body">
                 <p>Esame di cattura per il primo anno giorno lunedi 16 Ottobre alle 8:00.
                 
-                Cazzo vi ricordate che fatica quel esame? Ero tornato a casa tutto sudato per riuscire a catturare i pokemon in cosi poco tempo. 
-                Menomale che e solo un esame per i primini 
-                
                 Ricordatevi di portarvi un bel panino dalla mensa da mangiare durante il viaggio di ritorno e tanta tanta acqua.</p>
             </div>
         </article>
 
+        <!-- ARTICOLO 5 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">☕</div>
+                <div class="news-icon">
+                    <img src="img/scherzo-icon.jpg" alt="Scherzo"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">11 OTTOBRE</span>
                     <h2 class="article-title">Scherzo deplorevole al Prof di Storia</h2>
@@ -281,18 +302,16 @@
             </div>
             <div class="article-body">
                 <p>Hanno trovato della cenere di sigaretta nella tazza del prof di storia... inutile dirvi fin dove si sono sentite le sue lamentele. 
-                Secondo fonti affidabili sembrano essere stati studenti del primo anno.
-                
-                Sembra che questo sara solo uno dei tanti scherzetti degli studenti del primo anno. 
-                Se si hanno i nominativi dei colpevoli di questi atti si prega di riferirlo al preside.
-                
-                Noi non vogliamo una scuola cosi ed e nostro dovere partecipare attivamente per mantenere l'accademia una zona pulita e sicura per tutti.</p>
+                Se si hanno i nominativi dei colpevoli di questi atti si prega di riferirlo al preside.</p>
             </div>
         </article>
 
+        <!-- ARTICOLO 6 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">👻</div>
+                <div class="news-icon">
+                    <img src="img/fantasmi-icon.jpg" alt="Fantasmi"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">10 OTTOBRE</span>
                     <h2 class="article-title">Voci di corridoio: Fantasmi all'Accademia</h2>
@@ -300,17 +319,16 @@
             </div>
             <div class="article-body">
                 <p>Si aggirano voci che i fantasmi della ex scuola pokemon viaggiano sperduti nell'accademia alla ricerca di una via di uscita. 
-                Alcuni di questi fantasmi si dice siano vendicativi e odiano gli studenti dell'accademia e gli portino sfiga.
-                
-                Uno studente ci ha informato che e da un paio di giorni che si sente osservato durante la notte...Saranno davvero i fantasmi?
-                
                 Se volete assicurarvi che nessun fantasma si avvicini a voi ricordatevi di spargere del sale all'entrata della vostra camera.</p>
             </div>
         </article>
 
+        <!-- ARTICOLO 7 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">🃏</div>
+                <div class="news-icon">
+                    <img src="img/tcg-icon.jpg" alt="TCG"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">9 OTTOBRE</span>
                     <h2 class="article-title">Torna il GCC Pokémon: Regole Speciali</h2>
@@ -318,18 +336,16 @@
             </div>
             <div class="article-body">
                 <p>Anche quest'anno viene proposto tra gli studenti il gioco di carte Pokemon! 
-                Un gioco popolarissimo che nell'accademia ha le PROPRIE regole. 
-                Quindi si non aspettatevi un gioco lungo e noioso ma un breve match con i vostri amici e perche no anche rivali.
-                
-                Trovate tutte le regole del gioco in questo file: <a href="file:///C:/Users/yneko/Downloads/Pok%C3%A9mon%20GDR/Pok%C3%A9mon%20TCG.pdf" style="color:var(--primary-orange)">Regolamento TCG</a>
-                
-                Non siate delle pippe e giocate, potreste vincere molto piu di quello che pensiate.</p>
+                Trovate tutte le regole del gioco in questo file: <a href="#" style="color:var(--primary-orange)">Regolamento TCG</a></p>
             </div>
         </article>
 
+        <!-- ARTICOLO 8 -->
         <article class="article">
             <div class="article-header">
-                <div class="news-icon">🏆</div>
+                <div class="news-icon">
+                    <img src="img/rank-icon.jpg" alt="Rank"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
+                </div>
                 <div>
                     <span class="date-box">8 OTTOBRE</span>
                     <h2 class="article-title">Classifica dell'anno: Trionfo e Record</h2>
@@ -337,7 +353,6 @@
             </div>
             <div class="article-body">
                 <p>E i 12 studenti di quest'anno si sono classificati in questo ordine:</p>
-                
                 <table class="rank-table">
                     <tr><td class="rank-number">1)</td><td>Peppe Oak</td><td class="rank-number">7)</td><td>Peppe de Luca</td></tr>
                     <tr><td class="rank-number">2)</td><td>Marta Russo</td><td class="rank-number">8)</td><td>Mario Bassotto</td></tr>
@@ -346,11 +361,6 @@
                     <tr><td class="rank-number">5)</td><td>Erika Vento</td><td class="rank-number">11)</td><td>Francesca Luce</td></tr>
                     <tr><td class="rank-number">6)</td><td>Sofia Virgulini</td><td class="rank-number">12)</td><td>Richard Dex</td></tr>
                 </table>
-
-                <p>Non c'e da stupirsi che ad eccellere sia Luigi Oak, il primogenito del nostro preside.
-                
-                I partecipanti totali di quest'anno sono stati 152, 42 in piu dell'anno scorso! 
-                La popolarita della nostra accademia sta crescendo ogni anno!</p>
             </div>
         </article>
 
