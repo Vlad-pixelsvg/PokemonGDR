@@ -179,6 +179,7 @@
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255,255,255,0.3);
             cursor: pointer;
+            text-decoration: none; /* Per rendere il link invisibile sul testo */
         }
 
         .card:hover {
@@ -200,10 +201,15 @@
             .nav-links, .area-studenti { display: none; }
             .hero-text h1 { font-size: 1.8rem; }
         }
-html {
-    cursor: url("image/Mouse.png"), auto;
+		body {
+    /* Sostituisci l'URL con il percorso della tua immagine */
+    cursor: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg'), auto;
 }
 
+/* Se vuoi che cambi quando passi sopra un link o un pulsante */
+a:hover, button:hover, .card:hover {
+    cursor: url('percorso_altra_icona.png'), pointer;
+}
     </style>
 </head>
 <body>
@@ -243,29 +249,31 @@ html {
         </div>
 
         <div class="news-slider">
-            <div class="card news-card">
+            <!-- Articolo 1: Apertura Club -->
+            <a href="giornale.html" class="card news-card">
                 <div class="card-content">
-                    <span class="card-date">Torneo Interscolastico</span>
-                    <h3>Aperte le iscrizioni!</h3>
+                    <span class="card-date">16 OTTOBRE</span>
+                    <h3>Apertura dei club per i primini</h3>
                 </div>
-            </div>
-            <div class="card news-card">
+            </a>
+            <!-- Articolo 2: Sabato condiviso -->
+            <a href="giornale.html" class="card news-card">
                 <div class="card-content">
-                    <span class="card-date">Nuova Scoperta</span>
-                    <h3>Pokémon Rari nel Percorso 10</h3>
+                    <span class="card-date">14 OTTOBRE</span>
+                    <h3>Sabato condiviso!</h3>
                 </div>
-            </div>
-            <div class="card news-card">
+            </a>
+            <!-- Articolo 3: Allerta Spettri -->
+            <a href="giornale.html" class="card news-card">
                 <div class="card-content">
-                    <span class="card-date">Intervista Esclusiva</span>
-                    <h3>Al Campione di Galar</h3>
+                    <span class="card-date">13 OTTOBRE</span>
+                    <h3>Venerdì 13: Allerta Spettri</h3>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
     <script>
-        // Fix della ricerca: sincronizzazione classi HTML/JS
         document.getElementById('newsSearch').addEventListener('keyup', function(e) {
             let searchTerm = e.target.value.toLowerCase();
             let cards = document.querySelectorAll('.news-card');
