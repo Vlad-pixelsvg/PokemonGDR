@@ -7,20 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Press+Start+2P&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         /* Applica a tutto il documento */
-        html, body {
-            cursor: url('image/Mouse.png') 0 0, auto !important;
-            min-height: 100vh;
-        }
+html, body {
+    cursor: url('image/Mouse.png') 0 0, auto !important;
+    min-height: 100vh;
+}
 
-        /* Applica specificamente a link, pulsanti e card */
-        a, button, .card, .area-studenti, .search-btn, .pokeball-center img, .news-card {
-            cursor: url('image/Mouse.png') 0 0, pointer !important;
-        }
+/* Applica specificamente a link, pulsanti e card */
+a, button, .card, .area-studenti, .search-btn, .pokeball-center img, .news-card {
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+}
 
-        /* Fix per Chrome: a volte serve forzare lo stato active/hover */
-        a:hover, button:hover, .card:hover {
-            cursor: url('image/Mouse.png') 0 0, pointer !important;
-        }
+/* Fix per Chrome: a volte serve forzare lo stato active/hover */
+a:hover, button:hover, .card:hover {
+    cursor: url('image/Mouse.png') 0 0, pointer !important;
+}
 
         :root {
             --primary-orange: #FF8C00;
@@ -96,24 +96,25 @@
             margin-bottom: 25px;
         }
 
+        /* FIX ICONA: Da emoji a immagine rotonda */
         .news-icon {
             width: 80px; 
             height: 80px;
             min-width: 80px;
-            border-radius: 50%; 
+            border-radius: 50%; /* Rende il cerchio */
             background: var(--primary-orange);
             border: 4px solid var(--dark-orange);
             display: flex; 
             align-items: center; 
             justify-content: center;
-            overflow: hidden; 
+            overflow: hidden; /* Taglia i bordi delle immagini quadrate */
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .news-icon img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
+            object-fit: cover; /* Riempie il cerchio senza deformarsi */
         }
 
         .date-box {
@@ -218,35 +219,11 @@
             </div>
         </div>
 
+        <!-- ARTICOLO 1 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/13.png" alt="Pokémon Spettro">
-                </div>
-                <div>
-                    <span class="date-box">31 OTTOBRE</span>
-                    <h2 class="article-title">Notte di Ognissanti: Raduno a Monte Neville</h2>
-                </div>
-            </div>
-            <div class="article-body">
-                <p>Con l'avvicinarsi della notte più spaventosa dell'anno, l'attività dei Pokémon di tipo Spettro ha raggiunto picchi mai visti prima. Diversi studenti hanno segnalato avvistamenti di Gastly e Misdreavus che fluttuano indisturbati nei pressi dei dormitori dopo il coprifuoco.
-                
-                Il Professor Zim, esperto di fenomenologia paranormale, suggerisce di non guardare direttamente negli occhi un Gengar se dovesse apparire improvvisamente nella vostra ombra: "Vogliono solo giocare, ma il loro concetto di divertimento può essere... raggelante".
-                
-                Ricordate che i Pokémon Spettro sono attratti dalle emozioni forti. Se avvertite un calo improvviso della temperatura di circa 5°C, non correte: camminate con calma verso la zona più illuminata dell'Accademia.</p>
-                
-                <div class="gallery-grid">
-                    <div class="photo-placeholder">
-                        <img src="image/Pokecute1.png" alt="Ombra misteriosa">
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="article">
-            <div class="article-header">
-                <div class="news-icon">
-                    <img src="image/16.png" alt="Club">
+                    <img src="image/16.png" alt="Club"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">16 OTTOBRE</span>
@@ -267,10 +244,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 2 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/14.png" alt="Sabato">
+                    <img src="image/14.png" alt="Sabato"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">14 OTTOBRE</span>
@@ -288,10 +266,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 3 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/13.png" alt="Spettri">
+                    <img src="image/13.png" alt="Spettri"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">13 OTTOBRE</span>
@@ -308,10 +287,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 4 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/12.png" alt="Esame">
+                    <img src="image/12.png" alt="Esame"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">12 OTTOBRE</span>
@@ -325,10 +305,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 5 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/11.png" alt="Scherzo">
+                    <img src="image/11.png" alt="Scherzo"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">11 OTTOBRE</span>
@@ -341,10 +322,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 6 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/13.png" alt="Fantasmi">
+                    <img src="image/13.png" alt="Fantasmi"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">10 OTTOBRE</span>
@@ -357,10 +339,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 7 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/14.png" alt="TCG">
+                    <img src="image/14.png" alt="TCG"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">9 OTTOBRE</span>
@@ -373,10 +356,11 @@
             </div>
         </article>
 
+        <!-- ARTICOLO 8 -->
         <article class="article">
             <div class="article-header">
                 <div class="news-icon">
-                    <img src="image/8.jpg" alt="Rank">
+                    <img src="image/8.jpg" alt="Rank"> <!-- SOSTITUISCI IL PERCORSO IMG QUI -->
                 </div>
                 <div>
                     <span class="date-box">8 OTTOBRE</span>
